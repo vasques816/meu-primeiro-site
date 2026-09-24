@@ -1,19 +1,258 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>blog</title>
-    </head>
-    <body>
-        <header>
-            <h1>meu site será de games</h1>
-            <p>MEU PRIMEIRO SITE</p>
-        </header>
-        <main>
-            <h2>meu primeiro post</h2>
-            <p>Por: Guilherme Vasques</p>
-            <p>boas vindas ao meu site, meu site será de jogos em geral</p>
-        </main>    
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo PS2 - Os Maiores Clássicos</title>
+    <!-- Importando fonte moderna do Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- ESTILOS CSS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0d0f18;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #0b112c, #162252);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #0055ff;
+            box-shadow: 0 4px 15px rgba(0, 85, 255, 0.3);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: #4da3ff;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #bbb;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #4da3ff;
+        }
+
+        /* Seção Destaque (Hero) */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle, #1a2347 0%, #0d0f18 80%);
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: #0055ff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #aaa;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Seção de Jogos */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+            border-left: 5px solid #0055ff;
+            padding-left: 15px;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .game-card {
+            background-color: #15192c;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #222b4d;
+        }
+
+        .game-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 85, 255, 0.4);
+        }
+
+        .game-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 20px;
+        }
+
+        .game-info h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .genre {
+            display: inline-block;
+            background-color: #0055ff;
+            color: white;
+            font-size: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .game-info p {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: transparent;
+            border: 2px solid #0055ff;
+            color: #4da3ff;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0055ff;
+            color: white;
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #080a10;
+            color: #666;
+            margin-top: 50px;
+            font-size: 14px;
+            border-top: 1px solid #1a2347;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">🎮 PS2 Classics</div>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#jogos">Jogos</a>
+            <a href="#sobre">Sobre</a>
+        </nav>
+    </header>
+
+    <!-- Destaque Principal -->
+    <section class="hero">
+        <h1>A Era de Ouro do <span>PlayStation 2</span></h1>
+        <p>Relembre os títulos que marcaram gerações e definiram o rumo dos videogames modernos.</p>
+    </section>
+
+    <!-- Conteúdo / Galeria de Jogos -->
+    <div class="container" id="jogos">
+        <h2 class="section-title">Melhores Jogos</h2>
+        
+        <div class="games-grid">
+            <!-- Jogo 1 -->
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=500&auto=format&fit=crop&q=60" alt="God of War" class="game-img">
+                <div class="game-info">
+                    <span class="genre">Ação / Hack and Slash</span>
+                    <h3>God of War II</h3>
+                    <p>Acompanhe a jornada épica de Kratos em busca de vingança contra os deuses do Olimpo.</p>
+                    <a href="#" class="btn" onclick="alertaJogo('God of War II')">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Jogo 2 -->
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=500&auto=format&fit=crop&q=60" alt="GTA San Andreas" class="game-img">
+                <div class="game-info">
+                    <span class="genre">Mundo Aberto</span>
+                    <h3>GTA: San Andreas</h3>
+                    <p>Explore o estado de San Andreas com CJ em um dos maiores clássicos dos mundos abertos.</p>
+                    <a href="#" class="btn" onclick="alertaJogo('GTA: San Andreas')">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Jogo 3 -->
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?w=500&auto=format&fit=crop&q=60" alt="Shadow of the Colossus" class="game-img">
+                <div class="game-info">
+                    <span class="genre">Aventura / Puzzle</span>
+                    <h3>Shadow of the Colossus</h3>
+                    <p>Derrote 16 imponentes colossos em um mundo melancólico e deslumbrante.</p>
+                    <a href="#" class="btn" onclick="alertaJogo('Shadow of the Colossus')">Ver Detalhes</a>
+                </div>
+            </div>
+
+            <!-- Jogo 4 -->
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1612287233002-b1d0ba12c7c2?w=500&auto=format&fit=crop&q=60" alt="Resident Evil 4" class="game-img">
+                <div class="game-info">
+                    <span class="genre">Survival Horror</span>
+                    <h3>Resident Evil 4</h3>
+                    <p>Leon S. Kennedy em uma missão de resgate em uma vila misteriosa cheia de horrores.</p>
+                    <a href="#" class="btn" onclick="alertaJogo('Resident Evil 4')">Ver Detalhes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2026 Universo PS2 - Criado para fãs de retro-gaming.</p>
+    </footer>
+
+    <!-- --- JAVASCRIPT BÁSICO --- -->
+    <script>
+        function alertaJogo(nomeDoJogo) {
+            alert("Você selecionou o clássico: " + nomeDoJogo + "! Prepare o Memory Card!");
+        }
+    </script>
 </body>
 </html>
